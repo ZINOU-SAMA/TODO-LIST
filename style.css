@@ -86,6 +86,23 @@ label {
   transition: color 0.3s, text-decoration 0.3s;
 }
 
+footer {
+  background-color: blue;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  font-family: Arial, sans-serif;
+  font-size: 1.5rem;
+  /* Positioning the footer at the bottom */
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 1000;
+  margin-top: 2rem;
+}
+
 .delete-task:hover {
   background-color: blue;
   color: white;

@@ -5,6 +5,7 @@ let inputContainer = null;
 let newTaskButton = null;
 let taskInput = null;
 let counter = 1;
+let deleteButton = null;
 const addTask = () => {
   if (switc) {
     section.removeChild(inputContainer);
@@ -33,10 +34,18 @@ const newTask = () => {
     let taskList = document.getElementById("task-list");
     let taskItem = document.createElement("li");
     taskItem.className = "task-item";
+    taskItem.id = `task-${counter}`;
     taskItem.innerHTML = `<input type="checkbox" id="checkbox${counter}"/>
-                <label for="checkbox-${counter++}">${task}</label>
-                <button type="button" class="delete-task"><i class="fa-solid fa-trash-can"></i></button>`;
+                <label for="checkbox-${counter}">${task}</label>
+                <button type="button" class="delete-task" id="delete-${counter}"><i class="fa-solid fa-trash-can"></i></button>`;
     taskList.appendChild(taskItem);
+    deleteButton = document.getElementById(`delete-${counter}`);
+    let current = counter;
+    deleteButton.addEventListener("click", () => {
+      let taskItem = document.getElementById(`task-${current}`);
+      taskItem.remove();
+    });
+    counter++;
     taskInput.value = "";
   } else {
     alert("Please enter a task.");
