@@ -35,7 +35,7 @@ const newTask = () => {
     let taskItem = document.createElement("li");
     taskItem.className = "task-item";
     taskItem.id = `task-${counter}`;
-    taskItem.innerHTML = `<input type="checkbox" id="checkbox${counter}"/>
+    taskItem.innerHTML = `<input type="checkbox" id="checkbox-${counter}"/>
                 <label for="checkbox-${counter}">${task}</label>
                 <button type="button" class="delete-task" id="delete-${counter}"><i class="fa-solid fa-trash-can"></i></button>`;
     taskList.appendChild(taskItem);
